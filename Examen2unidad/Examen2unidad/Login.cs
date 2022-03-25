@@ -33,8 +33,9 @@ namespace Examen2unidad
                 return;
             }
 
-            FrmUsuarios frmUsuarios = new FrmUsuarios();
-            frmUsuarios.Show();
+            FrmMenu frmMenu = new FrmMenu();
+            frmMenu.Show();
+            this.Hide();
             
         }
 
