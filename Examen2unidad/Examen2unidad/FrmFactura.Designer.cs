@@ -44,13 +44,13 @@
             this.FechadateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Guardarbutton1 = new System.Windows.Forms.Button();
             this.ISVtextBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SubtotaltextBox2 = new System.Windows.Forms.TextBox();
             this.TotaltextBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.Guardarbutton1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,7 +65,7 @@
             this.groupBox1.Controls.Add(this.IdentidadmaskedTextBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Swis721 BlkCn BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 47);
+            this.groupBox1.Location = new System.Drawing.Point(12, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(643, 71);
             this.groupBox1.TabIndex = 0;
@@ -118,7 +118,7 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Swis721 BlkCn BT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 139);
+            this.groupBox2.Location = new System.Drawing.Point(12, 144);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(643, 65);
             this.groupBox2.TabIndex = 1;
@@ -197,7 +197,7 @@
             // 
             this.FechadateTimePicker1.Font = new System.Drawing.Font("Swis721 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechadateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechadateTimePicker1.Location = new System.Drawing.Point(557, 210);
+            this.FechadateTimePicker1.Location = new System.Drawing.Point(557, 215);
             this.FechadateTimePicker1.Name = "FechadateTimePicker1";
             this.FechadateTimePicker1.Size = new System.Drawing.Size(98, 21);
             this.FechadateTimePicker1.TabIndex = 3;
@@ -206,7 +206,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Swis721 BT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(508, 213);
+            this.label6.Location = new System.Drawing.Point(508, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 15);
             this.label6.TabIndex = 4;
@@ -226,6 +226,17 @@
             this.groupBox3.Size = new System.Drawing.Size(643, 78);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
+            // 
+            // Guardarbutton1
+            // 
+            this.Guardarbutton1.Font = new System.Drawing.Font("Swis721 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guardarbutton1.Location = new System.Drawing.Point(562, 49);
+            this.Guardarbutton1.Name = "Guardarbutton1";
+            this.Guardarbutton1.Size = new System.Drawing.Size(75, 23);
+            this.Guardarbutton1.TabIndex = 7;
+            this.Guardarbutton1.Text = "Guardar";
+            this.Guardarbutton1.UseVisualStyleBackColor = true;
+            this.Guardarbutton1.Click += new System.EventHandler(this.Guardarbutton1_Click);
             // 
             // ISVtextBox1
             // 
@@ -281,32 +292,21 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Subtotal";
             // 
-            // Guardarbutton1
-            // 
-            this.Guardarbutton1.Font = new System.Drawing.Font("Swis721 BT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Guardarbutton1.Location = new System.Drawing.Point(562, 49);
-            this.Guardarbutton1.Name = "Guardarbutton1";
-            this.Guardarbutton1.Size = new System.Drawing.Size(75, 23);
-            this.Guardarbutton1.TabIndex = 7;
-            this.Guardarbutton1.Text = "Guardar";
-            this.Guardarbutton1.UseVisualStyleBackColor = true;
-            this.Guardarbutton1.Click += new System.EventHandler(this.Guardarbutton1_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Swis721 BlkCn BT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(266, 9);
+            this.label10.Font = new System.Drawing.Font("Swis721 BlkCn BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(265, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(174, 25);
+            this.label10.Size = new System.Drawing.Size(179, 29);
             this.label10.TabIndex = 6;
-            this.label10.Text = "Pedido del Cliente";
+            this.label10.Text = "Pedidos Clientes";
             // 
             // FrmFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(738, 483);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox3);
