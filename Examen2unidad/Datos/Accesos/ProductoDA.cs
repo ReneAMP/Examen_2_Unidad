@@ -48,7 +48,7 @@ namespace Datos.Accesos
             bool inserto = false;
             try
             {
-                string sql = "INSERT INTO producto VALUES (@Codigo, @Descripcion, @Precio, @Existencia);";
+                string sql = "INSERT INTO producto VALUES (@Codigo, @Descripcion, @Precio, @Existencia, @Imagen);";
 
                 conn = new MySqlConnection(cadena);
                 conn.Open();
@@ -59,6 +59,7 @@ namespace Datos.Accesos
                 cmd.Parameters.AddWithValue("@Descripcion", producto.Descripcion);
                 cmd.Parameters.AddWithValue("@Precio", producto.Precio);
                 cmd.Parameters.AddWithValue("@Existencia", producto.Existencia);
+                cmd.Parameters.AddWithValue("@Imagen", producto.Imagen);
 
                 cmd.ExecuteNonQuery();
                 inserto = true;
@@ -79,7 +80,7 @@ namespace Datos.Accesos
             bool modifico = false;
             try
             {
-                string sql = "UPDATE  producto SET Codigo = @Codigo, Descripcion = @Descripcion, Precio = @Precio, Existencia = @Existencia WHERE Codigo = @Codigo;";
+                string sql = "UPDATE  producto SET Codigo = @Codigo, Descripcion = @Descripcion, Precio = @Precio, Existencia = @Existencia, Imagen = @Imagen WHERE Codigo = @Codigo;";
 
                 conn = new MySqlConnection(cadena);
                 conn.Open();
@@ -90,7 +91,7 @@ namespace Datos.Accesos
                 cmd.Parameters.AddWithValue("@Descripcion", producto.Descripcion);
                 cmd.Parameters.AddWithValue("@Precio", producto.Precio);
                 cmd.Parameters.AddWithValue("@Existencia", producto.Existencia);
-
+                cmd.Parameters.AddWithValue("@Imagen", producto.Imagen);
 
                 cmd.ExecuteNonQuery();
                 modifico = true;
@@ -131,6 +132,37 @@ namespace Datos.Accesos
 
             }
             return elimino;
+        }
+
+        public byte[] SeleccionarImagen(string codigo)
+        {
+            byte[] _imagen = new byte[0];
+
+            try
+            {
+                string sql = "Select Iamgen from producto WHERE Codigo = @Codigo;";
+
+                conn = new MySqlConnection(cadena);
+                conn.Open();
+
+                cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@Codigo", codigo);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    _imagen = (byte[])reader["Imagen"];
+                }
+
+
+                conn.Close();
+            }
+            catch (Exception)
+            {
+
+             
+            }
+            return _imagen;
         }
     }
 }
