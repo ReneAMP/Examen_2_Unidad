@@ -208,5 +208,52 @@ namespace Examen2unidad
                 MessageBox.Show("Debe seleccionar un producto");
             }
         }
+
+        private void Eliminarbutton4_Click(object sender, EventArgs e)
+        {
+            if (ProductosdataGridView1.SelectedRows.Count > 0)
+            {
+                bool elimino = productoDA.EliminarProducto(ProductosdataGridView1.CurrentRow.Cells["Codigo"].Value.ToString());
+
+                if (elimino)
+                {
+                    ListarProductos();
+                    MessageBox.Show("Producto eliminado", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar el producto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un producto","Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cancelarbutton5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

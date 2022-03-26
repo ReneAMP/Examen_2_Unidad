@@ -140,7 +140,7 @@ namespace Datos.Accesos
 
             try
             {
-                string sql = "Select Iamgen from producto WHERE Codigo = @Codigo;";
+                string sql = "Select Imagen from producto WHERE Codigo = @Codigo;";
 
                 conn = new MySqlConnection(cadena);
                 conn.Open();
@@ -164,5 +164,40 @@ namespace Datos.Accesos
             }
             return _imagen;
         }
+
+        public Producto GetProductoPorCodigo(string codigo)
+        {
+            Producto producto = new Producto();
+            try
+            {
+                string sql = "Select * from producto WHERE Codigo = @Codigo;";
+
+                conn = new MySqlConnection(cadena);
+                conn.Open();
+
+                cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@Codigo", codigo);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    producto.Codigo = reader["Codigo"].ToString();
+                    producto.Descripcion = reader["Descripcion"].ToString();
+                    producto.Precio = (int)Convert.ToDecimal(reader["Precio"]);
+                    producto.Existencia = Convert.ToInt32(reader["Existencia"].ToString());
+                    producto.Imagen = (byte[])reader["Imagen"];
+
+                }
+
+
+                conn.Close();
+            }
+            catch (Exception)
+            {
+
+            }
+            return producto;
+        }
+
     }
 }
